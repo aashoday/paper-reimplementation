@@ -57,11 +57,10 @@ e.g. The following pair achieves precision of 1.0, even though the candidate omi
 BLEU addresses this using the **brevity penalty (BP)**.
 
 $$
-BP =
-\begin{cases}
-1, & c > r \\[6pt]
-e^{(1-r/c)}, & 0 < c \leq r \\[6pt]
-0, & c = 0
+BP = \begin{cases}
+1 & \text{if } c > r \\
+e^{1-r/c} & \text{if } 0 < c \leq r \\
+0 & \text{if } c = 0
 \end{cases}
 $$
 
